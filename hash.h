@@ -12,7 +12,7 @@ bool hash_removeReg(Hash h, char* key);
 
 Hash hash_get(Hash h, const char* key);
 
-void hash_set(Hash h, const char* key, )
+void hash_set(Hash h, const char* key);
 
 bool hash_exists(Hash h, char* key);
 
