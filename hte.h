@@ -1,11 +1,13 @@
-#ifndef HASH_H
-#define HASH_H
+#ifndef HTE_H
+#define HTE_H
+
+#define MAX_KEY_LENGHT 32
 
 #include <stdbool.h>
 
 typedef void* Hash;
 
-Hash hash_createTable(int capacity);
+Hash hash_openFile(const char* filename);
 
 bool hash_insertReg(Hash h, char* key, int value);
 
@@ -17,6 +19,6 @@ bool hash_exists(Hash h, char* key);
 
 int hash_getRegistry(Hash h, char* key);
 
-void hash_destroyTable(Hash h);
+void hash_closeFile(Hash h);
 
 #endif
