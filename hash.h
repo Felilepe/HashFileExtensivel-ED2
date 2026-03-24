@@ -5,7 +5,7 @@
 
 typedef void* Hash;
 
-Hash hash_createTable();
+Hash hash_createTable(int capacity);
 
 bool hash_insertReg(Hash h, char* key, int value);
 
@@ -13,7 +13,7 @@ bool hash_removeReg(Hash h, char* key);
 
 Hash hash_get(Hash h, const char* key);
 
-void hash_set(Hash h, const char* key);
+int hash_getSize(Hash h);
 
 bool hash_exists(Hash h, char* key);
 
