@@ -1,10 +1,11 @@
 #ifndef HASH_H
 #define HASH_H
+
 #include <stdbool.h>
 
 typedef void* Hash;
 
-Hash hash_createTable(int n);
+Hash hash_createTable();
 
 bool hash_insertReg(Hash h, char* key, int value);
 

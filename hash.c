@@ -1,7 +1,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <hash.h>
+#include "hash.h"
+
+#define DEFAULT_CAPACITY 16
 
 typedef struct
 {
@@ -16,7 +18,21 @@ typedef struct
     size_t size;
 } hash_table;
 
-Hash hash_createTable(int n);
+Hash hash_createTable()
+{
+    hash_table *t = malloc(sizeof(hash_table));
+    if(t == NULL) return NULL;
+
+    t -> size = 0;
+    t -> capacity = DEFAULT_CAPACITY;
+
+    t -> entries = calloc(t -> capacity, sizeof(hash_entry));
+    if(t -> entries == NULL){
+        free(t);
+        return NULL;
+    }
+    return t;
+}
 
 bool hash_insertReg(Hash h, char* key, int value);
 
