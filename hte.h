@@ -1,7 +1,7 @@
 #ifndef HTE_H
 #define HTE_H
 
-#define MAX_KEY_LENGHT 32
+#define MAX_KEY_LENGTH 32
 
 #include <stdbool.h>
 
